@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodMeal — Eat How You Feel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Ambient background blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-icon">✦</span>
+          <span class="logo-name">MoodMeal</span>
+        </div>
+        <p class="tagline">eat how you feel</p>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="hero-title">
+        What's your<br/>
+        <em id="moodWord">mood</em> today?
+      </h1>
+      <p class="hero-sub">Pick a feeling. Get a perfect meal suggestion.</p>
+    </section>
+
+    <!-- MOOD SELECTOR -->
+    <section class="mood-section" aria-label="Select your mood">
+      <p class="section-label">How are you feeling?</p>
+      <div class="mood-grid" id="moodGrid">
+        <!-- Injected by app.js -->
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results-section" id="resultsSection">
+      <button class="btn-back" id="btnBack">← Change mood</button>
+      <h2 class="results-title" id="resultsTitle"></h2>
+      <p class="results-sub" id="resultsSub"></p>
+
+      <div class="affirmation" id="affirmation">
+        <span class="affirmation-icon" id="affIcon"></span>
+        <p class="affirmation-text" id="affText"></p>
+      </div>
+
+      <p class="section-label">Suggested meals</p>
+      <div class="meals-grid" id="mealsGrid">
+        <!-- Injected by app.js -->
+      </div>
+    </section>
+
+    <!-- MEAL DETAIL MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+        <div class="modal-emoji" id="modalEmoji"></div>
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-tags" id="modalTags"></div>
+        <p class="recipe-label">Quick recipe</p>
+        <ol class="modal-steps" id="modalSteps"></ol>
+        <div class="modal-macros" id="modalMacros"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
